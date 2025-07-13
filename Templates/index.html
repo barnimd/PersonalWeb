@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio [Nama Anda] - Software, Full-Stack, & Game Developer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0; /* slate-200 */
+        }
+
+        /* Gradient background for hero */
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #a21caf 100%);
+        }
+
+        /* Custom timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background-color: #4f46e5; /* indigo-600 */
+            border: 3px solid #1e293b; /* slate-800 */
+            z-index: 10;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 0.25rem;
+            width: 2px;
+            height: 100%;
+            background-color: #334155; /* slate-700 */
+        }
+        
+        /* Animation for elements on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Project card hover effect */
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-white">[Nama Anda]</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors duration-300">Tentang Saya</a>
+                <a href="#journey" class="text-slate-300 hover:text-white transition-colors duration-300">Perjalanan</a>
+                <a href="#skills" class="text-slate-300 hover:text-white transition-colors duration-300">Keahlian</a>
+                <a href="#projects" class="text-slate-300 hover:text-white transition-colors duration-300">Proyek</a>
+            </nav>
+            <a href="#contact" class="hidden md:block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                Hubungi Saya
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90">
+            <a href="#about" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Tentang Saya</a>
+            <a href="#journey" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Perjalanan</a>
+            <a href="#skills" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Keahlian</a>
+            <a href="#projects" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Proyek</a>
+            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Hubungi Saya</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Home/Hero -->
+        <section id="home" class="h-screen min-h-[700px] flex items-center justify-center text-center hero-gradient text-white p-6">
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 reveal">
+                    Hi, saya [Nama Anda]
+                </h1>
+                <p class="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto reveal" style="transition-delay: 150ms;">
+                    Seorang <span class="font-bold">Software</span>, <span class="font-bold">Full-Stack</span>, & <span class="font-bold">Game Developer</span> yang bersemangat membangun solusi digital inovatif.
+                </p>
+                <a href="#projects" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-slate-200 transition-all duration-300 transform hover:scale-105 reveal" style="transition-delay: 300ms;">
+                    Lihat Proyek Saya
+                </a>
+            </div>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+                <svg class="w-6 h-6 text-white animate-bounce" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Section 2: About Me -->
+        <section id="about" class="py-20 lg:py-32 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2 reveal">
+                        <img src="https://placehold.co/400x500/1e293b/e2e8f0?text=Foto+Anda" alt="Foto [Nama Anda]" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="md:col-span-3 reveal" style="transition-delay: 150ms;">
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Tentang Saya</h2>
+                        <p class="text-lg text-slate-300 mb-4">
+                            Ganti teks ini dengan deskripsi tentang diri Anda. Ceritakan passion Anda dalam coding, apa yang membuat Anda tertarik pada software, web, dan game development.
+                        </p>
+                        <p class="text-lg text-slate-300 mb-6">
+                            Jelaskan filosofi kerja Anda. Misalnya, Anda suka memecahkan masalah yang kompleks, berkolaborasi dalam tim, dan selalu belajar teknologi baru untuk menciptakan produk yang bermanfaat dan menyenangkan bagi pengguna.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">Unduh CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: My Journey -->
+        <section id="journey" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">Perjalanan Saya</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="timeline-item reveal">
+                        <h3 class="text-xl font-bold text-indigo-400">2023 - Sekarang</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Full-Stack Developer di Perusahaan X</h4>
+                        <p class="mt-2 text-slate-400">Mengembangkan dan memelihara aplikasi web skala besar menggunakan React, Node.js, dan PostgreSQL. Bertanggung jawab atas seluruh siklus hidup pengembangan, dari konsep hingga deployment.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <h3 class="text-xl font-bold text-indigo-400">2022</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Merilis Game "Project Adventure"</h4>
+                        <p class="mt-2 text-slate-400">Secara mandiri mengembangkan dan mempublikasikan game platformer 2D di platform Itch.io menggunakan Unity dan C#. Proyek ini mencakup desain level, pemrograman gameplay, dan pembuatan aset seni.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <h3 class="text-xl font-bold text-indigo-400">2021 - 2022</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Junior Software Developer di Startup Y</h4>
+                        <p class="mt-2 text-slate-400">Berkontribusi dalam pengembangan perangkat lunak desktop untuk manajemen data klien menggunakan C# dan .NET Framework. Bekerja dalam tim dengan metodologi Agile.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <h3 class="text-xl font-bold text-indigo-400">2017 - 2021</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Sarjana Ilmu Komputer, Universitas Z</h4>
+                        <p class="mt-2 text-slate-400">Lulus dengan predikat Cum Laude dengan fokus pada Rekayasa Perangkat Lunak dan Kecerdasan Buatan. Aktif dalam klub pemrograman dan mengikuti beberapa kompetisi hackathon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Skills -->
+        <section id="skills" class="py-20 lg:py-32 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">Keahlian Saya</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="reveal">
+                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Keahlian Teknis</h3>
+                        <div class="space-y-6">
+                           <!-- Full-Stack -->
+                           <div>
+                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Full-Stack Development</h4>
+                               <div class="flex flex-wrap gap-3">
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">JavaScript (ES6+)</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">TypeScript</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">React.js</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Node.js</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Express.js</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">SQL (PostgreSQL)</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">NoSQL (MongoDB)</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">HTML5 & CSS3</span>
+                               </div>
+                           </div>
+                           <!-- Game Dev -->
+                           <div>
+                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Game Development</h4>
+                               <div class="flex flex-wrap gap-3">
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Unity</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">C#</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Unreal Engine</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">C++</span>
+                               </div>
+                           </div>
+                           <!-- Tools & Lainnya -->
+                           <div>
+                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Tools & Lainnya</h4>
+                               <div class="flex flex-wrap gap-3">
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Git & GitHub</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Docker</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">CI/CD</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Agile/Scrum</span>
+                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">REST APIs</span>
+                               </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="reveal" style="transition-delay: 150ms;">
+                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Keahlian Non-Teknis</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                                <span class="text-lg text-slate-300">Pemecahan Masalah & Berpikir Kritis</span>
+                            </li>
+                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span class="text-lg text-slate-300">Kerja Sama Tim & Kolaborasi</span>
+                            </li>
+                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <span class="text-lg text-slate-300">Komunikasi Efektif</span>
+                            </li>
+                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                                <span class="text-lg text-slate-300">Manajemen Waktu & Proyek</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Projects -->
+        <section id="projects" class="py-20 lg:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6 text-white reveal">Proyek Pilihan</h2>
+                <p class="text-center max-w-2xl mx-auto text-slate-400 mb-12 reveal">Berikut adalah beberapa proyek yang pernah saya kerjakan, menunjukkan keahlian saya di berbagai bidang.</p>
+                
+                <!-- Filter Buttons -->
+                <div id="project-filters" class="flex justify-center flex-wrap gap-4 mb-12 reveal">
+                    <button class="filter-btn active bg-indigo-600 text-white py-2 px-5 rounded-full font-semibold" data-filter="all">Semua</button>
+                    <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="fullstack">Full-Stack</button>
+                    <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="game">Game Dev</button>
+                    <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="software">Software</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Full-Stack -->
+                    <div class="project-item reveal" data-category="fullstack">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
+                            <div class="relative">
+                                <img src="https://placehold.co/600x400/1e293b/4f46e5?text=E-Commerce+Platform" alt="Proyek E-Commerce" class="w-full h-auto object-cover transition-transform duration-300">
+                                <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                                    <div class="flex space-x-4">
+                                        <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Live Demo</a>
+                                        <a href="#" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Platform E-Commerce</h3>
+                                <p class="text-slate-400 mb-4">Situs e-commerce dengan fitur lengkap, termasuk manajemen produk, keranjang belanja, dan gateway pembayaran.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">React</span>
+                                    <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">Node.js</span>
+                                    <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2: Game Dev -->
+                    <div class="project-item reveal" data-category="game">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
+                            <div class="relative">
+                                <img src="https://placehold.co/600x400/1e293b/a21caf?text=Pixel+Adventure+Game" alt="Proyek Game" class="w-full h-auto object-cover transition-transform duration-300">
+                                <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                                    <div class="flex space-x-4">
+                                        <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Play Game</a>
+                                        <a href="#" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Pixel Adventure</h3>
+                                <p class="text-slate-400 mb-4">Game platformer 2D dengan gaya pixel art, menampilkan mekanik puzzle dan pertarungan bos yang menantang.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">Unity</span>
+                                    <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">C#</span>
+                                    <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">Aseprite</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3: Software -->
+                    <div class="project-item reveal" data-category="software">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
+                            <div class="relative">
+                                <img src="https://placehold.co/600x400/1e293b/16a34a?text=Data+Management+Tool" alt="Proyek Software" class="w-full h-auto object-cover transition-transform duration-300">
+                                <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                                    <div class="flex space-x-4">
+                                        <a href="#" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Alat Manajemen Data</h3>
+                                <p class="text-slate-400 mb-4">Aplikasi desktop untuk mengelola dan memvisualisasikan data pelanggan secara efisien dan aman.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">C#</span>
+                                    <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">.NET</span>
+                                    <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">WPF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more projects here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Contact -->
+        <section id="contact" class="py-20 lg:py-32 bg-slate-900">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 reveal">Tertarik Bekerja Sama?</h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8 reveal">Saya selalu terbuka untuk diskusi mengenai proyek baru atau peluang kolaborasi. Jangan ragu untuk menghubungi saya.</p>
+                <div class="reveal">
+                    <a href="mailto:emailanda@example.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 inline-block transform hover:scale-105">
+                        Kirim Email
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-6 mt-12 reveal">
+                    <a href="#" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-6">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2024 [Nama Anda]. Dibuat dengan ❤️ dan secangkir kopi.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOpenIcon = document.getElementById('menu-open-icon');
+            const menuCloseIcon = document.getElementById('menu-close-icon');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                    menuOpenIcon.classList.remove('hidden');
+                    menuCloseIcon.classList.add('hidden');
+                }
+            });
+
+            // Header background on scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                }
+            });
+
+            // Project Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button style
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-indigo-600', 'text-white');
+                        btn.classList.add('bg-slate-700', 'text-slate-300');
+                    });
+                    button.classList.add('bg-indigo-600', 'text-white');
+                    button.classList.remove('bg-slate-700', 'text-slate-300');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    projectItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (filter === 'all' || filter === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Scroll Reveal Animation
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
