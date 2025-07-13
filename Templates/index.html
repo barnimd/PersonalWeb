@@ -86,6 +86,25 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* Accordion styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+        .accordion-header svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-header.active svg {
+            transform: rotate(180deg);
+        }
+
+        /* Progress bar animation */
+        .progress-bar-inner {
+            width: 0%;
+            transition: width 0.8s ease-in-out;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -128,7 +147,12 @@
                     Hi, I'm Bara
                 </h1>
                 <p class="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto reveal h-8" style="transition-delay: 150ms;">
-                    <span id="typing-effect" class="font-bold"></span><span class="blinking-cursor">|</span>
+                    <span id="typing-effect" class="font-thin"></span><span class="blinking-cursor">|</span>
+                </p>
+                <p class="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto reveal" style="transition-delay: 150ms;">
+                    A passionate software, web, and game developer who loves to create innovative solutions.
+                    From idea to deployment: apps that solve problems, and games that spark engagement.<br>
+                    Code it. Ship it. Play it. Repeat.
                 </p>
                 <a href="#projects" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-slate-200 transition-all duration-300 transform hover:scale-105 reveal" style="transition-delay: 300ms;">
                     View My Work
@@ -146,16 +170,19 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-2 reveal">
-                        <img src="https://placehold.co/400x500/1e293b/e2e8f0?text=Your+Photo" alt="Photo of Bara" class="rounded-lg shadow-2xl w-full">
+                        <img src="C:\Project Github\PersonalWeb\Sources\profilePict.jpg" alt="Photo of Bara" class="rounded-lg shadow-2xl w-full">
                     </div>
                     <div class="md:col-span-3 reveal" style="transition-delay: 150ms;">
-                        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">About Me</h2>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Turning Ideas into Interactive Experiences</h2>
                         <div id="about-me-content">
                             <p class="text-lg text-slate-300 mb-4">
-                                Replace this text with a description about yourself. Talk about your passion for coding, what draws you to software, web, and game development.
+                                I'm a developer passionate about building full-stack applications, intuitive software, and immersive games. 
+                                From crafting responsive interfaces to scripting real-time interactions, I turn concepts into working products that people can use, play, and enjoy.
                             </p>
                             <p class="text-lg text-slate-300 mb-6">
-                                Explain your work philosophy. For instance, you enjoy solving complex problems, collaborating in a team, and constantly learning new technologies to create useful and enjoyable products for users.
+                                <b>Game & Software Developer:</b> I enjoy merging logic and creativity—designing gameplay systems, coding mechanics, and polishing user experience.<br><br>
+                                <b>Full-Stack Mindset:</b> I work across front-end and back-end with a focus on clean architecture and functionality.<br><br>
+                                <b>Always Evolving:</b> Whether it’s web tech, Unity, or emerging tools like VR and AR—I keep learning, experimenting, and shipping.
                             </p>
                         </div>
                         <div class="flex space-x-4 mt-6">
@@ -173,23 +200,18 @@
                 <div class="max-w-3xl mx-auto">
                     <div class="timeline-item reveal">
                         <h3 class="text-xl font-bold text-indigo-400">2023 - Present</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Full-Stack Developer at Company X</h4>
-                        <p class="mt-2 text-slate-400">Developing and maintaining large-scale web applications using React, Node.js, and PostgreSQL. Responsible for the entire development lifecycle, from concept to deployment.</p>
+                        <h4 class="text-lg font-semibold mt-1 text-white">President University</h4>
+                        <p class="mt-2 text-slate-400">Majoring in <b>Informatics</b> at President University with a focus on <b>Game Development</b>, preparing for a career in interactive software and game technology.</p>
                     </div>
                     <div class="timeline-item reveal">
-                        <h3 class="text-xl font-bold text-indigo-400">2022</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Released "Project Adventure" Game</h4>
-                        <p class="mt-2 text-slate-400">Independently developed and published a 2D platformer game on Itch.io using Unity and C#. The project included level design, gameplay programming, and art asset creation.</p>
+                        <h3 class="text-xl font-bold text-indigo-400">2023</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Lost Treasures of Cultural Legends</h4>
+                        <p class="mt-2 text-slate-400">Created a 2D pixel art game with cultural themes using GameMaker, developed collaboratively and awarded 3rd place in a public exhibition.</p>
                     </div>
                     <div class="timeline-item reveal">
-                        <h3 class="text-xl font-bold text-indigo-400">2021 - 2022</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Junior Software Developer at Startup Y</h4>
-                        <p class="mt-2 text-slate-400">Contributed to the development of desktop software for client data management using C# and the .NET Framework. Worked in a team following the Agile methodology.</p>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <h3 class="text-xl font-bold text-indigo-400">2017 - 2021</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Bachelor of Computer Science, University Z</h4>
-                        <p class="mt-2 text-slate-400">Graduated with Cum Laude honors, focusing on Software Engineering and Artificial Intelligence. Active in the programming club and participated in several hackathons.</p>
+                        <h3 class="text-xl font-bold text-indigo-400">2020 - 2023</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">SMA IT Gema Nurani</h4>
+                        <p class="mt-2 text-slate-400">Where I built the discipline, curiosity, and values that shaped my journey into tech.</p>
                     </div>
                 </div>
             </div>
@@ -198,73 +220,120 @@
         <!-- Section 4: Skills -->
         <section id="skills" class="py-20 lg:py-32 bg-slate-900">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">My Skills</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">My Skills & Abilities</h2>
                 <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Technical Skills Accordion -->
                     <div class="reveal">
-                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Technical Skills</h3>
-                        <div class="space-y-6">
-                           <!-- Full-Stack -->
-                           <div>
-                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Full-Stack Development</h4>
-                               <div class="flex flex-wrap gap-3">
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">JavaScript (ES6+)</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">TypeScript</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">React.js</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Node.js</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Express.js</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">SQL (PostgreSQL)</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">NoSQL (MongoDB)</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">HTML5 & CSS3</span>
-                               </div>
-                           </div>
-                           <!-- Game Dev -->
-                           <div>
-                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Game Development</h4>
-                               <div class="flex flex-wrap gap-3">
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Unity</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">C#</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Unreal Engine</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">C++</span>
-                               </div>
-                           </div>
-                           <!-- Tools & Others -->
-                           <div>
-                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Tools & Others</h4>
-                               <div class="flex flex-wrap gap-3">
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Git & GitHub</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Docker</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">CI/CD</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Agile/Scrum</span>
-                                   <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">REST APIs</span>
-                               </div>
-                           </div>
+                        <h3 class="text-2xl font-bold mb-6 text-white">Technical Skills</h3>
+                        <div class="space-y-2">
+                            <!-- Frontend -->
+                            <div>
+                                <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
+                                    <span class="text-lg font-semibold text-white">Frontend</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
+                                </button>
+                                <div class="accordion-content px-4 pt-4">
+                                    <div class="skill-item mb-4" data-percent="95">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">HTML & CSS</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                    <div class="skill-item mb-4" data-percent="90">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">JavaScript</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                    <div class="skill-item mb-4" data-percent="90">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">React.js</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Backend -->
+                            <div>
+                                <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
+                                    <span class="text-lg font-semibold text-white">Backend</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
+                                </button>
+                                <div class="accordion-content px-4 pt-4">
+                                    <div class="skill-item mb-4" data-percent="80">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Node.js</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                    <div class="skill-item mb-4" data-percent="85">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">php</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                    <div class="skill-item mb-4" data-percent="80">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Databases (SQL & NoSQL)</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tools -->
+                            <div>
+                                <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
+                                    <span class="text-lg font-semibold text-white">Tools</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
+                                </button>
+                                <div class="accordion-content px-4 pt-4">
+                                    <div class="skill-item mb-4" data-percent="95">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Git & GitHub</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                    <div class="skill-item mb-4" data-percent="75">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Docker</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Game Dev -->
+                            <div>
+                                <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
+                                    <span class="text-lg font-semibold text-white">Game Development</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
+                                </button>
+                                <div class="accordion-content px-4 pt-4">
+                                    <div class="skill-item mb-4" data-percent="90">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Unity & C#</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                    <div class="skill-item mb-4" data-percent="70">
+                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">GameMaker & GML</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
+                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <!-- Soft Skills -->
                     <div class="reveal" style="transition-delay: 150ms;">
-                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Soft Skills</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-white">Soft Skills</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                <span class="text-lg text-slate-300">Problem Solving & Critical Thinking</span>
+                            <li class="flex items-start bg-slate-800 p-4 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-400 mr-4 shrink-0"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-white mb-1">Problem-Solving</h4>
+                                    <p class="text-slate-400">Adept at analyzing complex issues and implementing effective, scalable solutions.</p>
+                                </div>
                             </li>
-                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                                <span class="text-lg text-slate-300">Teamwork & Collaboration</span>
+                            <li class="flex items-start bg-slate-800 p-4 rounded-lg">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-400 mr-4 shrink-0"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-white mb-1">Team Collaboration</h4>
+                                    <p class="text-slate-400">Experienced in Agile environments, using tools like Git and Jira for seamless teamwork.</p>
+                                </div>
                             </li>
-                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                                <span class="text-lg text-slate-300">Effective Communication</span>
-                            </li>
-                            <li class="flex items-center bg-slate-800 p-4 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
-                                <span class="text-lg text-slate-300">Time & Project Management</span>
+                            <li class="flex items-start bg-slate-800 p-4 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-400 mr-4 shrink-0"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <div>
+                                    <h4 class="font-semibold text-lg text-white mb-1">Communication</h4>
+                                    <p class="text-slate-400">Clearly articulating technical concepts to both technical and non-technical stakeholders.</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- Section 5: Projects -->
         <section id="projects" class="py-20 lg:py-32">
             <div class="container mx-auto px-6">
@@ -466,7 +535,7 @@
 
             function type() {
                 const currentWord = words[wordIndex];
-                const typeSpeed = isDeleting ? 75 : 150;
+                const typeSpeed = isDeleting ? 50 : 75;
                 if (isDeleting) {
                     typingElement.textContent = currentWord.substring(0, charIndex - 1);
                     charIndex--;
@@ -482,7 +551,75 @@
                 }
                 setTimeout(type, typeSpeed);
             }
-            setTimeout(type, 500);
+            setTimeout(type, 100);
+
+            // --- SKILLS ACCORDION & ANIMATION LOGIC ---
+
+            // Function to animate the number counting up
+            function animateValue(obj, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    obj.innerHTML = Math.floor(progress * (end - start) + start) + '%';
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
+
+                    // Close all other accordions and reset their animations
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== this) {
+                            otherHeader.classList.remove('active');
+                            const otherContent = otherHeader.nextElementSibling;
+                            otherContent.style.maxHeight = null;
+                            
+                            // Reset bars and percentages in the closed accordion
+                            otherContent.querySelectorAll('.skill-item').forEach(skill => {
+                                skill.querySelector('.progress-bar-inner').style.width = '0%';
+                                skill.querySelector('.skill-percent').textContent = '0%';
+                            });
+                        }
+                    });
+
+                    // Toggle the clicked accordion
+                    if (isActive) {
+                        // If it's already active, close it and reset
+                        this.classList.remove('active');
+                        content.style.maxHeight = null;
+                        content.querySelectorAll('.skill-item').forEach(skill => {
+                            skill.querySelector('.progress-bar-inner').style.width = '0%';
+                            skill.querySelector('.skill-percent').textContent = '0%';
+                        });
+                    } else {
+                        // If it's not active, open it and start animations
+                        this.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+
+                        // Animate the bars and percentages in the newly opened accordion
+                        content.querySelectorAll('.skill-item').forEach(skill => {
+                            const progressBar = skill.querySelector('.progress-bar-inner');
+                            const percentText = skill.querySelector('.skill-percent');
+                            const targetPercent = parseInt(skill.dataset.percent, 10);
+
+                            // Use a short delay to ensure the transition is visible
+                            setTimeout(() => {
+                                progressBar.style.width = targetPercent + '%';
+                                animateValue(percentText, 0, targetPercent, 800); // 800ms duration
+                            }, 100); // 100ms delay
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
