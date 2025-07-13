@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio [Nama Anda] - Software, Full-Stack, & Game Developer</title>
+    <title>Bara's Website</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,11 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     
     <style>
         /* Custom styles */
@@ -80,6 +75,17 @@
         .project-card:hover img {
             transform: scale(1.05);
         }
+
+        /* Blinking cursor for typing effect */
+        .blinking-cursor {
+            font-weight: 500;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -87,15 +93,16 @@
     <!-- Header & Navigation -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-bold text-white">[Nama Anda]</a>
+            <a href="#home" class="text-xl font-bold text-white">Bara's Here</a>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-slate-300 hover:text-white transition-colors duration-300">Tentang Saya</a>
-                <a href="#journey" class="text-slate-300 hover:text-white transition-colors duration-300">Perjalanan</a>
-                <a href="#skills" class="text-slate-300 hover:text-white transition-colors duration-300">Keahlian</a>
-                <a href="#projects" class="text-slate-300 hover:text-white transition-colors duration-300">Proyek</a>
+                <a href="#home" class="text-slate-300 hover:text-white transition-colors duration-300">Home</a>
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#journey" class="text-slate-300 hover:text-white transition-colors duration-300">Journey</a>
+                <a href="#skills" class="text-slate-300 hover:text-white transition-colors duration-300">Skills</a>
+                <a href="#projects" class="text-slate-300 hover:text-white transition-colors duration-300">Projects</a>
             </nav>
             <a href="#contact" class="hidden md:block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
-                Hubungi Saya
+                Contact Me
             </a>
             <button id="mobile-menu-button" class="md:hidden text-white">
                 <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -104,11 +111,12 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/90">
-            <a href="#about" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Tentang Saya</a>
-            <a href="#journey" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Perjalanan</a>
-            <a href="#skills" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Keahlian</a>
-            <a href="#projects" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Proyek</a>
-            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Hubungi Saya</a>
+            <a href="#home" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Home</a>
+            <a href="#about" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">About</a>
+            <a href="#journey" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Journey</a>
+            <a href="#skills" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Skills</a>
+            <a href="#projects" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Projects</a>
+            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Contact Me</a>
         </div>
     </header>
 
@@ -117,13 +125,13 @@
         <section id="home" class="h-screen min-h-[700px] flex items-center justify-center text-center hero-gradient text-white p-6">
             <div class="relative z-10">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 reveal">
-                    Hi, saya [Nama Anda]
+                    Hi, I'm Bara
                 </h1>
-                <p class="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto reveal" style="transition-delay: 150ms;">
-                    Seorang <span class="font-bold">Software</span>, <span class="font-bold">Full-Stack</span>, & <span class="font-bold">Game Developer</span> yang bersemangat membangun solusi digital inovatif.
+                <p class="text-xl md:text-2xl font-medium mb-8 max-w-3xl mx-auto reveal h-8" style="transition-delay: 150ms;">
+                    <span id="typing-effect" class="font-bold"></span><span class="blinking-cursor">|</span>
                 </p>
                 <a href="#projects" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-slate-200 transition-all duration-300 transform hover:scale-105 reveal" style="transition-delay: 300ms;">
-                    Lihat Proyek Saya
+                    View My Work
                 </a>
             </div>
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
@@ -138,18 +146,20 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-5 gap-12 items-center">
                     <div class="md:col-span-2 reveal">
-                        <img src="https://placehold.co/400x500/1e293b/e2e8f0?text=Foto+Anda" alt="Foto [Nama Anda]" class="rounded-lg shadow-2xl w-full">
+                        <img src="https://placehold.co/400x500/1e293b/e2e8f0?text=Your+Photo" alt="Photo of Bara" class="rounded-lg shadow-2xl w-full">
                     </div>
                     <div class="md:col-span-3 reveal" style="transition-delay: 150ms;">
-                        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Tentang Saya</h2>
-                        <p class="text-lg text-slate-300 mb-4">
-                            Ganti teks ini dengan deskripsi tentang diri Anda. Ceritakan passion Anda dalam coding, apa yang membuat Anda tertarik pada software, web, dan game development.
-                        </p>
-                        <p class="text-lg text-slate-300 mb-6">
-                            Jelaskan filosofi kerja Anda. Misalnya, Anda suka memecahkan masalah yang kompleks, berkolaborasi dalam tim, dan selalu belajar teknologi baru untuk menciptakan produk yang bermanfaat dan menyenangkan bagi pengguna.
-                        </p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">Unduh CV</a>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">About Me</h2>
+                        <div id="about-me-content">
+                            <p class="text-lg text-slate-300 mb-4">
+                                Replace this text with a description about yourself. Talk about your passion for coding, what draws you to software, web, and game development.
+                            </p>
+                            <p class="text-lg text-slate-300 mb-6">
+                                Explain your work philosophy. For instance, you enjoy solving complex problems, collaborating in a team, and constantly learning new technologies to create useful and enjoyable products for users.
+                            </p>
+                        </div>
+                        <div class="flex space-x-4 mt-6">
+                            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">Download CV</a>
                         </div>
                     </div>
                 </div>
@@ -159,27 +169,27 @@
         <!-- Section 3: My Journey -->
         <section id="journey" class="py-20 lg:py-32">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">Perjalanan Saya</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">My Journey</h2>
                 <div class="max-w-3xl mx-auto">
                     <div class="timeline-item reveal">
-                        <h3 class="text-xl font-bold text-indigo-400">2023 - Sekarang</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Full-Stack Developer di Perusahaan X</h4>
-                        <p class="mt-2 text-slate-400">Mengembangkan dan memelihara aplikasi web skala besar menggunakan React, Node.js, dan PostgreSQL. Bertanggung jawab atas seluruh siklus hidup pengembangan, dari konsep hingga deployment.</p>
+                        <h3 class="text-xl font-bold text-indigo-400">2023 - Present</h3>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Full-Stack Developer at Company X</h4>
+                        <p class="mt-2 text-slate-400">Developing and maintaining large-scale web applications using React, Node.js, and PostgreSQL. Responsible for the entire development lifecycle, from concept to deployment.</p>
                     </div>
                     <div class="timeline-item reveal">
                         <h3 class="text-xl font-bold text-indigo-400">2022</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Merilis Game "Project Adventure"</h4>
-                        <p class="mt-2 text-slate-400">Secara mandiri mengembangkan dan mempublikasikan game platformer 2D di platform Itch.io menggunakan Unity dan C#. Proyek ini mencakup desain level, pemrograman gameplay, dan pembuatan aset seni.</p>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Released "Project Adventure" Game</h4>
+                        <p class="mt-2 text-slate-400">Independently developed and published a 2D platformer game on Itch.io using Unity and C#. The project included level design, gameplay programming, and art asset creation.</p>
                     </div>
                     <div class="timeline-item reveal">
                         <h3 class="text-xl font-bold text-indigo-400">2021 - 2022</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Junior Software Developer di Startup Y</h4>
-                        <p class="mt-2 text-slate-400">Berkontribusi dalam pengembangan perangkat lunak desktop untuk manajemen data klien menggunakan C# dan .NET Framework. Bekerja dalam tim dengan metodologi Agile.</p>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Junior Software Developer at Startup Y</h4>
+                        <p class="mt-2 text-slate-400">Contributed to the development of desktop software for client data management using C# and the .NET Framework. Worked in a team following the Agile methodology.</p>
                     </div>
                     <div class="timeline-item reveal">
                         <h3 class="text-xl font-bold text-indigo-400">2017 - 2021</h3>
-                        <h4 class="text-lg font-semibold mt-1 text-white">Sarjana Ilmu Komputer, Universitas Z</h4>
-                        <p class="mt-2 text-slate-400">Lulus dengan predikat Cum Laude dengan fokus pada Rekayasa Perangkat Lunak dan Kecerdasan Buatan. Aktif dalam klub pemrograman dan mengikuti beberapa kompetisi hackathon.</p>
+                        <h4 class="text-lg font-semibold mt-1 text-white">Bachelor of Computer Science, University Z</h4>
+                        <p class="mt-2 text-slate-400">Graduated with Cum Laude honors, focusing on Software Engineering and Artificial Intelligence. Active in the programming club and participated in several hackathons.</p>
                     </div>
                 </div>
             </div>
@@ -188,10 +198,10 @@
         <!-- Section 4: Skills -->
         <section id="skills" class="py-20 lg:py-32 bg-slate-900">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">Keahlian Saya</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">My Skills</h2>
                 <div class="grid md:grid-cols-2 gap-12">
                     <div class="reveal">
-                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Keahlian Teknis</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Technical Skills</h3>
                         <div class="space-y-6">
                            <!-- Full-Stack -->
                            <div>
@@ -217,9 +227,9 @@
                                    <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">C++</span>
                                </div>
                            </div>
-                           <!-- Tools & Lainnya -->
+                           <!-- Tools & Others -->
                            <div>
-                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Tools & Lainnya</h4>
+                               <h4 class="font-semibold text-lg text-indigo-400 mb-3">Tools & Others</h4>
                                <div class="flex flex-wrap gap-3">
                                    <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Git & GitHub</span>
                                    <span class="bg-slate-800 text-slate-300 py-2 px-4 rounded-lg">Docker</span>
@@ -231,23 +241,23 @@
                         </div>
                     </div>
                     <div class="reveal" style="transition-delay: 150ms;">
-                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Keahlian Non-Teknis</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-white text-center">Soft Skills</h3>
                         <ul class="space-y-4">
                             <li class="flex items-center bg-slate-800 p-4 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                                <span class="text-lg text-slate-300">Pemecahan Masalah & Berpikir Kritis</span>
+                                <span class="text-lg text-slate-300">Problem Solving & Critical Thinking</span>
                             </li>
                             <li class="flex items-center bg-slate-800 p-4 rounded-lg">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                                <span class="text-lg text-slate-300">Kerja Sama Tim & Kolaborasi</span>
+                                <span class="text-lg text-slate-300">Teamwork & Collaboration</span>
                             </li>
                             <li class="flex items-center bg-slate-800 p-4 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                                <span class="text-lg text-slate-300">Komunikasi Efektif</span>
+                                <span class="text-lg text-slate-300">Effective Communication</span>
                             </li>
                             <li class="flex items-center bg-slate-800 p-4 rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mr-4"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
-                                <span class="text-lg text-slate-300">Manajemen Waktu & Proyek</span>
+                                <span class="text-lg text-slate-300">Time & Project Management</span>
                             </li>
                         </ul>
                     </div>
@@ -258,12 +268,12 @@
         <!-- Section 5: Projects -->
         <section id="projects" class="py-20 lg:py-32">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6 text-white reveal">Proyek Pilihan</h2>
-                <p class="text-center max-w-2xl mx-auto text-slate-400 mb-12 reveal">Berikut adalah beberapa proyek yang pernah saya kerjakan, menunjukkan keahlian saya di berbagai bidang.</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6 text-white reveal">Featured Projects</h2>
+                <p class="text-center max-w-2xl mx-auto text-slate-400 mb-12 reveal">Here are some of the projects I've worked on, showcasing my skills across various fields.</p>
                 
                 <!-- Filter Buttons -->
                 <div id="project-filters" class="flex justify-center flex-wrap gap-4 mb-12 reveal">
-                    <button class="filter-btn active bg-indigo-600 text-white py-2 px-5 rounded-full font-semibold" data-filter="all">Semua</button>
+                    <button class="filter-btn active bg-indigo-600 text-white py-2 px-5 rounded-full font-semibold" data-filter="all">All</button>
                     <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="fullstack">Full-Stack</button>
                     <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="game">Game Dev</button>
                     <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="software">Software</button>
@@ -275,7 +285,7 @@
                     <div class="project-item reveal" data-category="fullstack">
                         <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
                             <div class="relative">
-                                <img src="https://placehold.co/600x400/1e293b/4f46e5?text=E-Commerce+Platform" alt="Proyek E-Commerce" class="w-full h-auto object-cover transition-transform duration-300">
+                                <img src="https://placehold.co/600x400/1e293b/4f46e5?text=E-Commerce+Platform" alt="E-Commerce Project" class="w-full h-auto object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
                                         <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Live Demo</a>
@@ -284,8 +294,8 @@
                                 </div>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-2">Platform E-Commerce</h3>
-                                <p class="text-slate-400 mb-4">Situs e-commerce dengan fitur lengkap, termasuk manajemen produk, keranjang belanja, dan gateway pembayaran.</p>
+                                <h3 class="text-xl font-bold text-white mb-2">E-Commerce Platform</h3>
+                                <p class="text-slate-400 mb-4">A full-featured e-commerce site with product management, shopping cart, and payment gateway integration.</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">React</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">Node.js</span>
@@ -298,7 +308,7 @@
                     <div class="project-item reveal" data-category="game">
                         <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
                             <div class="relative">
-                                <img src="https://placehold.co/600x400/1e293b/a21caf?text=Pixel+Adventure+Game" alt="Proyek Game" class="w-full h-auto object-cover transition-transform duration-300">
+                                <img src="https://placehold.co/600x400/1e293b/a21caf?text=Pixel+Adventure+Game" alt="Game Project" class="w-full h-auto object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
                                         <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Play Game</a>
@@ -308,7 +318,7 @@
                             </div>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-white mb-2">Pixel Adventure</h3>
-                                <p class="text-slate-400 mb-4">Game platformer 2D dengan gaya pixel art, menampilkan mekanik puzzle dan pertarungan bos yang menantang.</p>
+                                <p class="text-slate-400 mb-4">A 2D platformer game with pixel art style, featuring puzzle mechanics and challenging boss fights.</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">Unity</span>
                                     <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">C#</span>
@@ -321,7 +331,7 @@
                     <div class="project-item reveal" data-category="software">
                         <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
                             <div class="relative">
-                                <img src="https://placehold.co/600x400/1e293b/16a34a?text=Data+Management+Tool" alt="Proyek Software" class="w-full h-auto object-cover transition-transform duration-300">
+                                <img src="https://placehold.co/600x400/1e293b/16a34a?text=Data+Management+Tool" alt="Software Project" class="w-full h-auto object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
                                         <a href="#" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">GitHub</a>
@@ -329,8 +339,8 @@
                                 </div>
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-bold text-white mb-2">Alat Manajemen Data</h3>
-                                <p class="text-slate-400 mb-4">Aplikasi desktop untuk mengelola dan memvisualisasikan data pelanggan secara efisien dan aman.</p>
+                                <h3 class="text-xl font-bold text-white mb-2">Data Management Tool</h3>
+                                <p class="text-slate-400 mb-4">A desktop application for managing and visualizing customer data efficiently and securely.</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">C#</span>
                                     <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">.NET</span>
@@ -339,7 +349,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Add more projects here -->
                 </div>
             </div>
         </section>
@@ -347,11 +356,11 @@
         <!-- Section 6: Contact -->
         <section id="contact" class="py-20 lg:py-32 bg-slate-900">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 reveal">Tertarik Bekerja Sama?</h2>
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8 reveal">Saya selalu terbuka untuk diskusi mengenai proyek baru atau peluang kolaborasi. Jangan ragu untuk menghubungi saya.</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 reveal">Interested in Collaborating?</h2>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8 reveal">I'm always open to discussing new projects or collaboration opportunities. Feel free to get in touch.</p>
                 <div class="reveal">
-                    <a href="mailto:emailanda@example.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 inline-block transform hover:scale-105">
-                        Kirim Email
+                    <a href="mailto:your.email@example.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 inline-block transform hover:scale-105">
+                        Send Email
                     </a>
                 </div>
                 <div class="flex justify-center space-x-6 mt-12 reveal">
@@ -368,10 +377,10 @@
 
     <footer class="bg-black py-6">
         <div class="container mx-auto px-6 text-center text-slate-500">
-            <p>&copy; 2024 [Nama Anda]. Dibuat dengan ❤️ dan secangkir kopi.</p>
+            <p>&copy; 2024 Bara. Made with ❤️ and a cup of coffee.</p>
         </div>
     </footer>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Mobile Menu Toggle
@@ -386,7 +395,6 @@
                 menuCloseIcon.classList.toggle('hidden');
             });
             
-            // Close mobile menu when a link is clicked
             mobileMenu.addEventListener('click', (e) => {
                 if (e.target.tagName === 'A') {
                     mobileMenu.classList.add('hidden');
@@ -413,16 +421,13 @@
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', () => {
-                    // Update active button style
                     filterButtons.forEach(btn => {
                         btn.classList.remove('bg-indigo-600', 'text-white');
                         btn.classList.add('bg-slate-700', 'text-slate-300');
                     });
                     button.classList.add('bg-indigo-600', 'text-white');
                     button.classList.remove('bg-slate-700', 'text-slate-300');
-
                     const filter = button.getAttribute('data-filter');
-
                     projectItems.forEach(item => {
                         const category = item.getAttribute('data-category');
                         if (filter === 'all' || filter === category) {
@@ -434,22 +439,50 @@
                 });
             });
 
-            // Scroll Reveal Animation
+            // UPDATED Scroll Reveal Animation (Fade In/Out)
             const revealElements = document.querySelectorAll('.reveal');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.remove('visible');
                     }
                 });
             }, {
-                threshold: 0.1
+                threshold: 0.1 // Trigger when 10% of the element is visible
             });
 
             revealElements.forEach(el => {
                 observer.observe(el);
             });
+
+            // Typing Effect
+            const typingElement = document.getElementById('typing-effect');
+            const words = ['a Software Developer', 'a Full-Stack Developer', 'a Game Developer'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                const typeSpeed = isDeleting ? 75 : 150;
+                if (isDeleting) {
+                    typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                if (!isDeleting && charIndex === currentWord.length) {
+                    setTimeout(() => isDeleting = true, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+                setTimeout(type, typeSpeed);
+            }
+            setTimeout(type, 500);
         });
     </script>
 </body>
