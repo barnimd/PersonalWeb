@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bara's Website</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     
     <style>
         /* Custom styles */
@@ -100,16 +100,15 @@
             transform: rotate(180deg);
         }
 
-        /* Progress bar animation */
-        .progress-bar-inner {
+        /* progress-bar-inner sudah tidak dipakai, bisa dihapus */
+        /* .progress-bar-inner {
             width: 0%;
             transition: width 0.8s ease-in-out;
-        }
+        } */
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-xl font-bold text-white">Bara's Here</a>
@@ -128,7 +127,6 @@
                 <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-black/90">
             <a href="#home" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">Home</a>
             <a href="#about" class="block py-3 px-6 text-slate-300 hover:bg-slate-800">About</a>
@@ -140,7 +138,6 @@
     </header>
 
     <main>
-        <!-- Section 1: Home/Hero -->
         <section id="home" class="h-screen min-h-[700px] flex items-center justify-center text-center hero-gradient text-white p-6">
             <div class="relative z-10">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 reveal">
@@ -165,7 +162,6 @@
             </div>
         </section>
 
-        <!-- Section 2: About Me -->
         <section id="about" class="py-20 lg:py-32 bg-slate-900">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-5 gap-12 items-center">
@@ -193,7 +189,6 @@
             </div>
         </section>
 
-        <!-- Section 3: My Journey -->
         <section id="journey" class="py-20 lg:py-32">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">My Journey</h2>
@@ -212,114 +207,123 @@
             </div>
         </section>
 
-        <!-- Section 4: Skills -->
         <section id="skills" class="py-20 lg:py-32 bg-slate-900">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16 text-white reveal">My Skills & Abilities</h2>
                 <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Technical Skills Accordion -->
                     <div class="reveal">
                         <h3 class="text-2xl font-bold mb-6 text-white">Technical Skills</h3>
                         <div class="space-y-2">
-                            <!-- Frontend -->
                             <div>
                                 <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
                                     <span class="text-lg font-semibold text-white">Frontend</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
                                 </button>
-                                <div class="accordion-content px-4 pt-4">
-                                    <div class="skill-item mb-4" data-percent="95">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">HTML & CSS</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="90">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">JavaScript</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="90">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">tailwindcss</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                <div class="accordion-content">
+                                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 p-4 pt-4">
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-html5-plain-wordmark text-5xl text-orange-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">HTML5</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-css3-plain-wordmark text-5xl text-blue-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">CSS3</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-javascript-plain text-5xl text-yellow-400"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">JavaScript</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-tailwindcss-plain text-5xl text-cyan-400"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Tailwind</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Backend -->
                             <div>
                                 <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
                                     <span class="text-lg font-semibold text-white">Backend</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
                                 </button>
-                                <div class="accordion-content px-4 pt-4">
-                                    <div class="skill-item mb-4" data-percent="80">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Python</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="85">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">php</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="80">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Databases (SQL & NoSQL)</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                <div class="accordion-content">
+                                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 p-4 pt-4">
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-python-plain-wordmark text-5xl text-blue-400"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Python</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-php-plain text-5xl text-indigo-400"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">PHP</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-mysql-plain-wordmark text-5xl text-blue-300"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">MySQL</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-mongodb-plain-wordmark text-5xl text-green-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">MongoDB</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Tools -->
                             <div>
                                 <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
                                     <span class="text-lg font-semibold text-white">Tools</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
                                 </button>
-                                <div class="accordion-content px-4 pt-4">
-                                    <div class="skill-item mb-4" data-percent="95">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Git & GitHub</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="80">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">VS Code</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="70">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Figma</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="75">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Docker</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="80">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Android Studio</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="85">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Blender 3D Modelling and Animation</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="70">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Aseprite Pixel art </span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                <div class="accordion-content">
+                                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 p-4 pt-4">
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-git-plain-wordmark text-5xl text-red-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Git</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-vscode-plain-wordmark text-5xl text-blue-400"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">VS Code</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-figma-plain text-5xl text-purple-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Figma</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-docker-plain-wordmark text-5xl text-blue-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Docker</span>
+                                        </div>
+                                         <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-androidstudio-plain-wordmark text-5xl text-green-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Android Studio</span>
+                                        </div>
+                                         <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-blender-original-wordmark text-5xl text-orange-500"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Blender</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Game Dev -->
                             <div>
                                 <button class="accordion-header w-full flex justify-between items-center p-4 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors">
                                     <span class="text-lg font-semibold text-white">Game Development</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-slate-400"><path d="m6 9 6 6 6-6"/></svg>
                                 </button>
-                                <div class="accordion-content px-4 pt-4">
-                                    <div class="skill-item mb-4" data-percent="90">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">Unity & C#</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
-                                    </div>
-                                    <div class="skill-item mb-4" data-percent="70">
-                                        <div class="flex justify-between mb-1"><span class="text-base font-medium text-slate-300">GameMaker & GML</span><span class="skill-percent text-sm font-medium text-slate-400">0%</span></div>
-                                        <div class="w-full bg-slate-700 rounded-full h-2.5"><div class="progress-bar-inner bg-indigo-500 h-2.5 rounded-full"></div></div>
+                                <div class="accordion-content">
+                                    <div class="grid grid-cols-3 sm:grid-cols-4 gap-4 p-4 pt-4">
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-unity-original-wordmark text-5xl text-slate-200"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">Unity</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <i class="devicon-csharp-plain text-5xl text-purple-400"></i>
+                                            <span class="text-sm font-medium text-slate-300 mt-2">C#</span>
+                                        </div>
+                                        <div class="bg-slate-800 p-4 rounded-lg flex flex-col items-center justify-center text-center group transform transition-transform hover:scale-105">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/4/4b/GameMaker_Logo.svg" alt="GameMaker" class="h-12 w-12 object-contain">
+                                            <span class="text-sm font-medium text-slate-300 mt-2">GameMaker</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Soft Skills -->
                     <div class="reveal" style="transition-delay: 150ms;">
                         <h3 class="text-2xl font-bold mb-6 text-white">Soft Skills</h3>
                         <ul class="space-y-4">
@@ -349,13 +353,12 @@
                 </div>
             </div>
         </section>
-        <!-- Section 5: Projects -->
+        
         <section id="projects" class="py-20 lg:py-32">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl lg:text-4xl font-bold text-center mb-6 text-white reveal">Featured Projects</h2>
                 <p class="text-center max-w-2xl mx-auto text-slate-400 mb-12 reveal">Here are some of the projects I've worked on, showcasing my skills across various fields.</p>
                 
-                <!-- Filter Buttons -->
                 <div id="project-filters" class="flex justify-center flex-wrap gap-4 mb-12 reveal">
                     <button class="filter-btn active bg-indigo-600 text-white py-2 px-5 rounded-full font-semibold" data-filter="all">All</button>
                     <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="fullstack">Full-Stack</button>
@@ -363,24 +366,21 @@
                     <button class="filter-btn bg-slate-700 hover:bg-slate-600 text-slate-300 py-2 px-5 rounded-full font-semibold" data-filter="software">Software</button>
                 </div>
 
-                <!-- Projects Grid -->
                 <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1: Full-Stack -->
                     <div class="project-item reveal" data-category="fullstack">
-                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
-                            <div class="relative">
-                                <img src="Sources/eduQuiz.png" alt="EduQuiz" class="w-full h-auto object-cover transition-transform duration-300">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg flex flex-col h-full">
+                            <div class="relative overflow-hidden aspect-video">
+                                <img src="Sources/eduQuiz.png" alt="EduQuiz" class="project-image w-full h-full object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
-                                        <!-- <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Live Demo</a> -->
                                         <a href="https://github.com/barnimd/eduQuiz" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">GitHub</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-white mb-2">eduQuiz</h3>
                                 <p class="text-slate-400 mb-4">An interactive quiz platform that lets users test their knowledge across categories like Math, Animals, and Geography. Features include leaderboard, user statistics, and account authentication</p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2 mt-auto pt-4">
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">HTML</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">CSS</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">JavaScript</span>
@@ -390,22 +390,20 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="project-item reveal" data-category="fullstack">
-                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
-                            <div class="relative">
-                                <img src="Sources/Moviepedia.jpg" alt="Moviepedia" class="w-full h-auto object-cover transition-transform duration-300">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg flex flex-col h-full">
+                            <div class="relative overflow-hidden aspect-video">
+                                <img src="Sources/Moviepedia.jpg" alt="Moviepedia" class="project-image w-full h-full object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
-                                        <!-- <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Live Demo</a> -->
                                         <a href="https://docs.google.com/document/d/14QBaj0rUVUve9SjvipZujqkCightjWv8yZPWvgXC1fI/edit?usp=sharing" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">Report</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-white mb-2">Moviepedia</h3>
                                 <p class="text-slate-400 mb-4">A movie information website where users can search and view detailed info including actors, cast, plot summaries, and user ratings. Includes a watchlist feature to save favorite movies</p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2 mt-auto pt-4">
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">HTML</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">CSS</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">JavaScript</span>
@@ -413,22 +411,20 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="project-item reveal" data-category="fullstack">
-                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
-                            <div class="relative">
-                                <img src="Sources/Lilo's bookstore.jpg" alt="Lilo's Bookstore" class="w-full h-auto object-cover transition-transform duration-300">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg flex flex-col h-full">
+                            <div class="relative overflow-hidden aspect-video">
+                                <img src="Sources/Lilo's bookstore.jpg" alt="Lilo's Bookstore" class="project-image w-full h-full object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
-                                        <!-- <a href="#" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Live Demo</a> -->
                                         <a href="https://docs.google.com/document/d/14A2ZS8PF7OiueoxSNiae5cx8G3y4N4sT/edit?usp=sharing&ouid=108800880330501825632&rtpof=true&sd=true" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">Report</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-white mb-2">Lilo's Bookstore</h3>
                                 <p class="text-slate-400 mb-4">A simple bookstore showcasing a variety of books across genres. Users can view book details and place orders through an easy-to-use interface</p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2 mt-auto pt-4">
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">HTML</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">CSS</span>
                                     <span class="text-xs bg-indigo-900/50 text-indigo-300 py-1 px-3 rounded-full">PHP</span>
@@ -437,11 +433,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project 2: Game Dev -->
                     <div class="project-item reveal" data-category="game">
-                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
-                            <div class="relative">
-                                <img src="Sources/Raturu.png" alt="Raturu : Home Fever" class="w-full h-auto object-cover transition-transform duration-300">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg flex flex-col h-full">
+                            <div class="relative overflow-hidden aspect-video">
+                                <img src="Sources/Raturu.png" alt="Raturu : Home Fever" class="project-image w-full h-full object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
                                         <a href="https://baraaaa.itch.io/raturu-home-fever" target="_blank" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">Play Game</a>
@@ -449,10 +444,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-white mb-2">Raturu : Home fever</h3>
                                 <p class="text-slate-400 mb-4">A first-person horror puzzle game set in a child’s fever dream. Focused on maze exploration and puzzle-solving within a dark and surreal atmosphere</p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2 mt-auto pt-4">
                                     <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">Unity</span>
                                     <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">C#</span>
                                     <span class="text-xs bg-fuchsia-900/50 text-fuchsia-300 py-1 px-3 rounded-full">Blender</span>
@@ -460,11 +455,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project 3: Software -->
                     <div class="project-item reveal" data-category="software">
-                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg">
-                            <div class="relative">
-                                <img src="Sources/ngopskuy1.jpg" alt="Ngopskuy" class="w-full h-auto object-cover transition-transform duration-300">
+                        <div class="project-card bg-slate-800 rounded-lg overflow-hidden group shadow-lg flex flex-col h-full">
+                            <div class="relative overflow-hidden aspect-video">
+                                <img src="Sources/ngopskuy1.jpg" alt="Ngopskuy" class="project-image w-full h-full object-cover transition-transform duration-300">
                                 <div class="project-overlay absolute inset-0 bg-black/70 flex items-center justify-center opacity-0 transition-opacity duration-300">
                                     <div class="flex space-x-4">
                                         <a href="https://github.com/barnimd/ProjectWMP" target="_blank" class="bg-slate-600 text-white py-2 px-4 rounded-lg hover:bg-slate-700 transition-colors">GitHub</a>
@@ -472,10 +466,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <h3 class="text-xl font-bold text-white mb-2">Ngopskuy</h3>
                                 <p class="text-slate-400 mb-4">A desktop application for managing and visualizing customer data efficiently and securely.</p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="flex flex-wrap gap-2 mt-auto pt-4">
                                     <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">Java</span>
                                     <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">Android Studio</span>
                                     <span class="text-xs bg-green-900/50 text-green-300 py-1 px-3 rounded-full">Firebase</span>
@@ -487,7 +481,6 @@
             </div>
         </section>
 
-        <!-- Section 6: Contact -->
         <section id="contact" class="py-20 lg:py-32 bg-slate-900">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4 reveal">Interested in Collaborating?</h2>
@@ -511,7 +504,7 @@
 
     <footer class="bg-black py-6">
         <div class="container mx-auto px-6 text-center text-slate-500">
-            <p>&copy; 2024 Bara. Made with ❤️ and a cup of coffee.</p>
+            <p>&copy; 2025 Bara. Made with ❤️ and a charging laptop.</p>
         </div>
     </footer>
     
@@ -618,22 +611,7 @@
             }
             setTimeout(type, 100);
 
-            // --- SKILLS ACCORDION & ANIMATION LOGIC ---
-
-            // Function to animate the number counting up
-            function animateValue(obj, start, end, duration) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    obj.innerHTML = Math.floor(progress * (end - start) + start) + '%';
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                window.requestAnimationFrame(step);
-            }
-
+            // --- SKILLS ACCORDION LOGIC (SIMPLIFIED) ---
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             
             accordionHeaders.forEach(header => {
@@ -641,47 +619,21 @@
                     const content = this.nextElementSibling;
                     const isActive = this.classList.contains('active');
 
-                    // Close all other accordions and reset their animations
+                    // Close all other accordions
                     accordionHeaders.forEach(otherHeader => {
                         if (otherHeader !== this) {
                             otherHeader.classList.remove('active');
-                            const otherContent = otherHeader.nextElementSibling;
-                            otherContent.style.maxHeight = null;
-                            
-                            // Reset bars and percentages in the closed accordion
-                            otherContent.querySelectorAll('.skill-item').forEach(skill => {
-                                skill.querySelector('.progress-bar-inner').style.width = '0%';
-                                skill.querySelector('.skill-percent').textContent = '0%';
-                            });
+                            otherHeader.nextElementSibling.style.maxHeight = null;
                         }
                     });
 
                     // Toggle the clicked accordion
                     if (isActive) {
-                        // If it's already active, close it and reset
                         this.classList.remove('active');
                         content.style.maxHeight = null;
-                        content.querySelectorAll('.skill-item').forEach(skill => {
-                            skill.querySelector('.progress-bar-inner').style.width = '0%';
-                            skill.querySelector('.skill-percent').textContent = '0%';
-                        });
                     } else {
-                        // If it's not active, open it and start animations
                         this.classList.add('active');
                         content.style.maxHeight = content.scrollHeight + 'px';
-
-                        // Animate the bars and percentages in the newly opened accordion
-                        content.querySelectorAll('.skill-item').forEach(skill => {
-                            const progressBar = skill.querySelector('.progress-bar-inner');
-                            const percentText = skill.querySelector('.skill-percent');
-                            const targetPercent = parseInt(skill.dataset.percent, 10);
-
-                            // Use a short delay to ensure the transition is visible
-                            setTimeout(() => {
-                                progressBar.style.width = targetPercent + '%';
-                                animateValue(percentText, 0, targetPercent, 800); // 800ms duration
-                            }, 100); // 100ms delay
-                        });
                     }
                 });
             });
